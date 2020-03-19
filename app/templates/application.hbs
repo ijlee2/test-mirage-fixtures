@@ -1,1 +1,27 @@
-<h1>Test</h1>
+<h1>Albums</h1>
+
+{{#each @model as |album|}}
+    <section data-test-album>
+        <header data-test-name>
+            <h2>{{album.name}}</h2>
+        </header>
+
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th align="left">Title</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each album.tracks as |track|}}
+                        <tr>
+                            <td>{{track.name}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </main>
+    </section>
+{{/each}}
